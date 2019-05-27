@@ -41,7 +41,7 @@ var initialize = function(){
 
 			var line = new THREE.Line( geometry, material );
 			line.rotation.x = -Math.PI / 2;
-			scene.add( line );
+			//scene.add( line );
 
 			var material1 = new THREE.LineBasicMaterial({
 				color: 0xffffff , linewidth : 2
@@ -55,7 +55,7 @@ var initialize = function(){
 
 			var line1 = new THREE.Line( geometry1, material1 );
 			line1.rotation.x = -Math.PI / 2;
-			scene.add( line1 );
+			//scene.add( line1 );
 			var material2 = new THREE.LineBasicMaterial({
 				color: 0xffffff , linewidth : 2
 			});
@@ -65,10 +65,9 @@ var initialize = function(){
 					new THREE.Vector3( -16,-8, 5 ),
 					//new THREE.Vector3( 1, 0, 0 )
 			);
-
 			var line2 = new THREE.Line( geometry2, material2 );
 			line2.rotation.x = -Math.PI / 2;
-			scene.add( line2 );
+			//scene.add( line2 );
 			var material3 = new THREE.LineBasicMaterial({
 				color: 0xffffff , linewidth : 2
 			});
@@ -78,10 +77,9 @@ var initialize = function(){
 					new THREE.Vector3( 25, -7, 5 ),
 					//new THREE.Vector3( 1, 0, 0 )
 			);
-
 			var line3 = new THREE.Line( geometry3, material3 );
 			line3.rotation.x = -Math.PI / 2;
-			scene.add( line3 );
+			//scene.add( line3 );
 
 		    var material4 = new THREE.LineDashedMaterial({
 				color: 0x00ffff , linewidth : 0.5
@@ -119,7 +117,7 @@ var initialize = function(){
 
 			var line5 = new THREE.Line( geometry5, material5 );
 			line5.rotation.x = -Math.PI / 2;
-			scene.add( line5 );
+			//scene.add( line5 );
 
 			
 			var material9 = new THREE.LineDashedMaterial({
@@ -174,7 +172,7 @@ var initialize = function(){
 			);
 			var line6 = new THREE.Line( geometry6, material6 );
 			line6.rotation.x = -Math.PI / 2;
-			scene.add( line6 );
+			//scene.add( line6 );
 
 
 	    
