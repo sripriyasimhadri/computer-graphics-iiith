@@ -1,1 +1,0 @@
-Open home.html 
