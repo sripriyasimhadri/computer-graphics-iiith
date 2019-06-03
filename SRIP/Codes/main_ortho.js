@@ -20,6 +20,13 @@ var initialize = function(){
 	    window.addEventListener( 'resize', onWindowResize, false );
 	    var req = new XMLHttpRequest();
 	    req.open("GET","bunnyobj.txt",true);
+
+	    var size = 15;
+		var divisions = 1;
+		var gridHelper = new THREE.GridHelper( size, divisions );
+		gridHelper.rotation.x = -Math.PI / 6;
+		gridHelper.position.set(5,5.5,1);
+		scene.add( gridHelper );
 	    
 		var material4 = new THREE.MeshBasicMaterial( {side: THREE.DoubleSide , transparent: true, opacity: 0.5} );
 		var geometry4 = new THREE.PlaneGeometry( 1, 1, 32 );
@@ -42,7 +49,8 @@ var initialize = function(){
 		//scene.add( line1 );
 
 		var material11 = new THREE.LineBasicMaterial({
-				color: 0x00ff00, linewidth: 0.5
+				color: 0x00ff00,
+				linewidth: 2
 		});
 		var geometry11 = new THREE.Geometry();
 		geometry11.vertices.push(
@@ -54,7 +62,7 @@ var initialize = function(){
 		scene.add( line11 );
 
 		var material12 = new THREE.LineBasicMaterial({
-				color: 0x00ff00, linewidth: 0.5
+				color: 0x00ff00, linewidth: 2
 		});
 		var geometry12 = new THREE.Geometry();
 		geometry12.vertices.push(
@@ -66,7 +74,7 @@ var initialize = function(){
 		scene.add( line12 );
 
 		var material13 = new THREE.LineBasicMaterial({
-				color: 0x00ff00, linewidth: 0.5
+				color: 0x00ff00, linewidth: 2
 		});
 		var geometry13 = new THREE.Geometry();
 		geometry13.vertices.push(
@@ -77,7 +85,7 @@ var initialize = function(){
 		line13.rotation.x = -Math.PI / 2;
 		scene.add( line13 );
 		var material2 = new THREE.LineBasicMaterial({
-				color: 0xffffff 
+				color: 0xffffff , linewidth: 2
 		});
 		var geometry2 = new THREE.Geometry();
 		geometry2.vertices.push(
@@ -89,7 +97,7 @@ var initialize = function(){
 		//scene.add( line2 );
 
 		var material21 = new THREE.LineBasicMaterial({
-				color: 0xff0000 
+				color: 0xff0000, linewidth: 2
 		});
 		var geometry21 = new THREE.Geometry();
 		geometry21.vertices.push(
@@ -101,7 +109,7 @@ var initialize = function(){
 		scene.add( line21 );
 
 		var material22 = new THREE.LineBasicMaterial({
-				color: 0xff0000 
+				color: 0xff0000, linewidth: 2
 		});
 		var geometry22 = new THREE.Geometry();
 		geometry22.vertices.push(
@@ -114,7 +122,7 @@ var initialize = function(){
 
 
 		var material4 = new THREE.LineDashedMaterial({
-			color: 0x00ffff , linewidth : 0.5
+			color: 0x00ffff , linewidth : 2
 		});
 		var geometry4 = new THREE.Geometry();
 		geometry4.vertices.push(

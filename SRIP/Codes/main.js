@@ -5,10 +5,8 @@ var initialize = function(){
 	    renderer.setSize( window.innerWidth, window.innerHeight );
 	    document.body.appendChild(renderer.domElement);
 	    camera = new THREE.PerspectiveCamera(60,window.innerWidth / window.innerHeight,0.1,100);
-	    //let aspectRatio = window.innerWidth / window.innerHeight;
-  		//let frustumSize = 20;
-		//camera = new THREE.OrthographicCamera(frustumSize * aspectRatio / -2, frustumSize * aspectRatio / 2, frustumSize / 2, frustumSize / -2, -100, 100);
 	    camera.position.y = 30;
+
 	    controls = new THREE.OrbitControls( camera );
 	    controls.damping = 0.2;
 	    controls.staticMoving = false;
@@ -19,7 +17,13 @@ var initialize = function(){
 	    stats.domElement.style.zIndex = 100;
 	    document.body.appendChild( stats.domElement );
 	    window.addEventListener( 'resize', onWindowResize, false );
-	    
+
+	    var size = 15;
+		var divisions = 2;
+		var gridHelper = new THREE.GridHelper( size, divisions );
+		gridHelper.position.set(5,5.5,1);
+		scene.add( gridHelper );
+
 		var material4 = new THREE.MeshBasicMaterial( {side: THREE.DoubleSide , transparent: true, opacity: 0.5} );
 		var geometry4 = new THREE.PlaneGeometry( 1.5, 1.5, 32 );
 		material4.transparent = true;
@@ -28,7 +32,8 @@ var initialize = function(){
 		plane.position.set(3, 1, -2.5);
 		plane.rotation.x = -Math.PI / 2;
 		scene.add( plane );
-	    	
+
+		
 	    	var material = new THREE.LineBasicMaterial({
 				color: 0xffffff , linewidth : 2
 			});
@@ -84,7 +89,7 @@ var initialize = function(){
 			scene.add( line3 );
 
 		    var material4 = new THREE.LineDashedMaterial({
-				color: 0x00ffff , linewidth : 0.5
+				color: 0x00ffff , linewidth : 2
 			});
 			var geometry4 = new THREE.Geometry();
 			geometry4.vertices.push(
@@ -109,7 +114,7 @@ var initialize = function(){
 
 			
 			var material5 = new THREE.LineDashedMaterial({
-				color: 0xffffff 
+				color: 0xffffff , linewidth : 2
 			});
 			var geometry5 = new THREE.Geometry();
 			geometry5.vertices.push(
@@ -123,7 +128,7 @@ var initialize = function(){
 
 			
 			var material9 = new THREE.LineDashedMaterial({
-				color: 0x00ff00, linewidth: 0.5 
+				color: 0x00ff00, linewidth: 2 
 			});
 			var geometry9 = new THREE.Geometry();
 			geometry9.vertices.push(
@@ -137,7 +142,7 @@ var initialize = function(){
 
 
 			var material10 = new THREE.LineDashedMaterial({
-				color: 0x00ff00, linewidth: 0.5 
+				color: 0x00ff00, linewidth: 2 
 			});
 			var geometry10 = new THREE.Geometry();
 			geometry10.vertices.push(
@@ -151,7 +156,7 @@ var initialize = function(){
 
 
 			var material11 = new THREE.LineDashedMaterial({
-				color: 0x00ff00, linewidth: 0.5 
+				color: 0x00ff00, linewidth: 2 
 			});
 			var geometry11 = new THREE.Geometry();
 			geometry11.vertices.push(
@@ -165,7 +170,7 @@ var initialize = function(){
 
 
 			var material6 = new THREE.LineDashedMaterial({
-				color: 0xffffff 
+				color: 0xffffff , linewidth : 2
 			});
 			var geometry6 = new THREE.Geometry();
 			geometry6.vertices.push(
@@ -179,7 +184,7 @@ var initialize = function(){
 
 	    
 			var material7 = new THREE.LineBasicMaterial({
-				color: 0xff0000 , linewidth: 0.1
+				color: 0xff0000 , linewidth: 2
 			});
 			var geometry7 = new THREE.Geometry();
 			geometry7.vertices.push(
@@ -192,7 +197,7 @@ var initialize = function(){
 
 
 			var material8 = new THREE.LineBasicMaterial({
-				color: 0xff0000 
+				color: 0xff0000 , linewidth : 2
 			});
 			var geometry8 = new THREE.Geometry();
 			geometry8.vertices.push(

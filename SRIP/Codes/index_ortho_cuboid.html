@@ -9,6 +9,20 @@
 <script type="text/javascript" src="../Libraries/OrbitControls.js"></script>
 <script type="text/javascript" src="debugParticles_ortho.js"></script>
 <script type="text/javascript" src="main_ortho_cuboid.js"></script>
+<script type="text/javascript">
+	function testCheckbox(oCheckbox)
+	{
+    	var checkbox_val = oCheckbox.value;
+    	if (oCheckbox.checked == true)
+    	{
+    	    alert("Checkbox with name:" + oCheckbox.name +" is checked");
+    	}
+    	else
+    	{
+     	   alert("Checkbox with name:" + oCheckbox.name +  " is not checked");
+    	}
+	}
+</script>
 <style>
   html,body{
       margin:0px;
@@ -17,7 +31,16 @@
       width:100%;
       overflow:hidden;
   }
+  .a {
+  	position: absolute;
+  	top: 90%;
+  	right: 90%;
+  	color: white;
+  	border-style: groove;
+  	border-width: medium;
+  }
 </style>
 <body onload="initialize()">
+	<p class="a"> <input type="checkbox" name="grid" value="grid" onchange="testCheckbox(this)">Grid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</br></p>
 </body>
 </html>
