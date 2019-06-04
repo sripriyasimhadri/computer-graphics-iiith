@@ -7,7 +7,7 @@ for(var i = 0 ; i < vertices.length; i ++){
     geometry.vertices.push(vertices[i]);
 }
 var particles = new THREE.PointCloud(geometry,new THREE.PointCloudMaterial({size:0.01}));
-particles.opacity=24
+particles.opacity=50;
 particles.rotation.x = -Math.PI / 3;
 scene.add(particles);
 var lineGeometry = new THREE.BufferGeometry();
@@ -33,8 +33,11 @@ lineGeometry.addAttribute("position",new THREE.BufferAttribute(positions,3));
 var lineMesh = new THREE.Line(lineGeometry,lineMaterial,THREE.LinePieces);
 lineMesh.rotation.x += 0.01;
 lineMesh.rotation.y += 0.005;
-lineMesh.opacity=15
+lineMesh.opacity=50;
 lineMesh.rotation.x = -Math.PI / 3;
 scene.add(lineMesh);
+
+
+
 return self;
 };
