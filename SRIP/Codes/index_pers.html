@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +14,8 @@ function closed() {
 <script type="text/javascript" src="../Libraries/three.js"></script>
 <script type="text/javascript" src="../Libraries/stats.min.js"></script>
 <script type="text/javascript" src="../Libraries/OrbitControls.js"></script>
-<script type="text/javascript" src="debugParticles.js"></script>
-<script type="text/javascript" src="main_pers.js"></script>
+<script type="text/javascript" src="js/debugParticles.js"></script>
+<script type="text/javascript" src="js/main_pers.js"></script>
 
 <script>
       function myFunction() {
@@ -166,10 +167,11 @@ function closed() {
 </div>
  <div class="features">
         <p><b><i>Select grids&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></b></p>
-        <input type="checkbox" id="xyAxis" onclick="drawXY()" checked="true"/>Draw XY grid &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+        <input type="checkbox" id="xyAxis" onclick="drawXY()"/>Draw XY grid &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
         <script type="text/javascript"> drawXY(); </script>
         <input type="checkbox" id="yzAxis" onclick="drawYZ()"/>Draw YZ grid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
         <input type="checkbox" id="zxAxis" onclick="drawZX()" />Draw ZX grid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+        <input type="checkbox" id="2DCamera" onclick="camera2D()" checked="true"/>Show the simulation in 3D<br><br>
   </div>
    
 

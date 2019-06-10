@@ -4,7 +4,6 @@ var initialize = function(){
 	    renderer.setPixelRatio( window.devicePixelRatio );
 	    renderer.setSize( window.innerWidth, window.innerHeight );
 	    document.body.appendChild(renderer.domElement);
-	    //camera = new THREE.PerspectiveCamera(60,window.innerWidth / window.innerHeight,0.1,100);
 	    let aspectRatio = window.innerWidth / window.innerHeight;
   		let frustumSize = 20;
 		camera = new THREE.OrthographicCamera(frustumSize * aspectRatio / -2, frustumSize * aspectRatio / 2, frustumSize / 2, frustumSize / -2, -100, 100);
@@ -12,8 +11,6 @@ var initialize = function(){
 	    controls = new THREE.OrbitControls( camera );
 	    controls.damping = 0.2;
 	    controls.staticMoving = false;
-	    //var axesHelper = new THREE.AxesHelper( 5 );
-		//scene.add( axesHelper );
 	    scene = new THREE.Scene();
 	    stats = new Stats();
 	    stats.domElement.style.position = 'absolute';
@@ -24,13 +21,6 @@ var initialize = function(){
 	    var req = new XMLHttpRequest();
 	    req.open("GET","bunnyobj.txt",true);
 
-	    var size = 15;
-		var divisions = 1;
-		var gridHelper = new THREE.GridHelper( size, divisions );
-		gridHelper.rotation.x = -Math.PI / 6;
-		gridHelper.position.set(5,5.5,1);
-		//scene.add( gridHelper );
-
 	 	var material4 = new THREE.MeshBasicMaterial( {side: THREE.DoubleSide , transparent: true, opacity: 0.5} );
 		var geometry4 = new THREE.PlaneGeometry( 1, 1, 32 );
 		material4.transparent = true;
@@ -39,18 +29,6 @@ var initialize = function(){
 		plane.position.set(3 , 3, -3);
 		plane.rotation.x = -Math.PI / 2;
 		scene.add( plane );
-
-		var material1 = new THREE.LineBasicMaterial({
-				color: 0xffffff 
-		});
-		var geometry1 = new THREE.Geometry();
-		geometry1.vertices.push(
-				new THREE.Vector3( -10.3, 10, 0 ),
-				new THREE.Vector3( -10.3, -3.7, 0 ),
-		);
-		var line1 = new THREE.Line( geometry1, material1 );
-		line1.rotation.x = -Math.PI / 2;
-		//scene.add( line1 );
 
 		var material11 = new THREE.LineBasicMaterial({
 				color: 0x00ff00, linewidth: 2
@@ -87,17 +65,6 @@ var initialize = function(){
 		var line13 = new THREE.Line( geometry13, material13 );
 		line13.rotation.x = -Math.PI / 2;
 		scene.add( line13 );
-		var material2 = new THREE.LineBasicMaterial({
-				color: 0xffffff, linewidth: 2
-		});
-		var geometry2 = new THREE.Geometry();
-		geometry2.vertices.push(
-				new THREE.Vector3( -10.3, -3.7, 0 ),
-				new THREE.Vector3( 10, -3.7, 0 ),
-		);
-		var line2 = new THREE.Line( geometry2, material2 );
-		line2.rotation.x = -Math.PI / 2;
-		//scene.add( line2 );
 
 		var material21 = new THREE.LineBasicMaterial({
 				color: 0xff0000, linewidth: 2 
@@ -130,8 +97,7 @@ var initialize = function(){
 		var geometry4 = new THREE.Geometry();
 		geometry4.vertices.push(
 				new THREE.Vector3( -2, 4, -20 ),
-				new THREE.Vector3( -5, -2, -10 ),
-					//new THREE.Vector3( 1, 0, 0 )
+				new THREE.Vector3( -5, -2, -10 )
 		);
 		var line4 = new THREE.Line( geometry4, material4 );
 		line4.rotation.x = -Math.PI / 2;
@@ -143,8 +109,7 @@ var initialize = function(){
 		var geometry41 = new THREE.Geometry();
 		geometry41.vertices.push(
 				new THREE.Vector3( 2, 2, -20 ),
-				new THREE.Vector3( -3.4, -10, -10 ),
-					//new THREE.Vector3( 1, 0, 0 )
+				new THREE.Vector3( -3.4, -10, -10 )
 		);
 		var line41 = new THREE.Line( geometry41, material41 );
 		line41.rotation.x = -Math.PI / 2;
@@ -425,5 +390,30 @@ function drawYZ() {
 			scene.add(horizontalyz);
 			y = y - 2;
 		}
+	}
+}
+function camera2D() {
+	var condition = document.getElementById('2DCamera').checked;
+	if( condition == true) {
+		controls.enableRotate = true;
+		controls.maxPolarAngle = Math.PI / 2;
+		controls.maxAzimuthAngle = Math.PI / 2;
+		camera.position.set(0.5,-0.25,2.2);
+		controls.enableKeys = true;
+		camera.rotation.y = Math.PI / 2;
+		camera.rotation.x = -Math.PI / 2;
+		camera.rotation.z = Math.PI / 2;
+		//camera.position.x = 1.25;
+		camera.position.y = 20;
+		//camera.position.z = 2.2;
+	} else {
+		camera.position.set(0,0,2.2);
+		controls.maxPolarAngle = Math.PI / 2;
+		controls.maxAzimuthAngle = Math.PI / 4;
+		controls.enableKeys = true;
+		controls.enableRotate = false;
+		camera.rotation.x = Math.PI/2;
+		camera.position.y = 30;
+		camera.rotation.z = Math.PI/2;
 	}
 }
