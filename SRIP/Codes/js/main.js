@@ -18,6 +18,19 @@ var initialize = function(){
 	    document.body.appendChild( stats.domElement );
 	    window.addEventListener( 'resize', onWindowResize, false );
 
+	    var axis= new THREE.AxisHelper(50);
+	    axis.position.set(-25.5,-9.7,12.8);
+	    axis.rotation.y=Math.PI/2;
+	    scene.add(axis);
+
+	    var sg = new THREE.SphereGeometry( 0.1, 32, 32 );
+		var sm = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+		var s1 = new THREE.Mesh( sg, sm );
+		s1.rotation.y=Math.PI/6;
+		s1.rotation.x=Math.PI/2;
+		s1.position.set(-25.5,-9.7,12.8);
+		scene.add(s1);
+
 		var material4 = new THREE.MeshBasicMaterial( {side: THREE.DoubleSide , transparent: true, opacity: 0.5} );
 		var geometry4 = new THREE.PlaneGeometry( 1.5, 1.5, 32 );
 		material4.transparent = true;
@@ -101,20 +114,6 @@ var initialize = function(){
 			scene.add( line41 );
 
 			
-			var material5 = new THREE.LineDashedMaterial({
-				color: 0xffffff , linewidth : 2
-			});
-			var geometry5 = new THREE.Geometry();
-			geometry5.vertices.push(
-					new THREE.Vector3( -19.3, 50, 0 ),
-					new THREE.Vector3( -19.3, -9.7, 0 ),
-			);
-
-			var line5 = new THREE.Line( geometry5, material5 );
-			line5.rotation.x = -Math.PI / 2;
-			scene.add( line5 );
-
-			
 			var material9 = new THREE.LineDashedMaterial({
 				color: 0x00ff00, linewidth: 2 
 			});
@@ -155,20 +154,6 @@ var initialize = function(){
 			var line11 = new THREE.Line( geometry11, material11 );
 			line11.rotation.x = -Math.PI / 2;
 			scene.add( line11 );
-
-
-			var material6 = new THREE.LineDashedMaterial({
-				color: 0xffffff , linewidth : 2
-			});
-			var geometry6 = new THREE.Geometry();
-			geometry6.vertices.push(
-					new THREE.Vector3( -19.3, -9.7, 0 ),
-					new THREE.Vector3( 50, -9.7, 0 ),
-			);
-			var line6 = new THREE.Line( geometry6, material6 );
-			line6.rotation.x = -Math.PI / 2;
-			scene.add( line6 );
-
 
 	    
 			var material7 = new THREE.LineBasicMaterial({
@@ -413,6 +398,18 @@ function camera2D() {
 		plane.position.set(3, 1, -2.5);
 		plane.rotation.x = -Math.PI / 2;
 		scene.add( plane );
+		var axis= new THREE.AxisHelper(50);
+	    axis.position.set(-25.5,-9.7,12.8);
+	    axis.rotation.y=Math.PI/2;
+	    scene.add(axis);
+
+	    var sg = new THREE.SphereGeometry( 0.1, 32, 32 );
+		var sm = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+		var s1 = new THREE.Mesh( sg, sm );
+		s1.rotation.y=Math.PI/6;
+		s1.rotation.x=Math.PI/2;
+		s1.position.set(-25.5,-9.7,12.8);
+		scene.add(s1);
 		
 	    	var material = new THREE.LineBasicMaterial({
 				color: 0xffffff , linewidth : 2
@@ -492,20 +489,6 @@ function camera2D() {
 			scene.add( line41 );
 
 			
-			var material5 = new THREE.LineDashedMaterial({
-				color: 0xffffff , linewidth : 2
-			});
-			var geometry5 = new THREE.Geometry();
-			geometry5.vertices.push(
-					new THREE.Vector3( -19.3, 50, 0 ),
-					new THREE.Vector3( -19.3, -9.7, 0 ),
-			);
-
-			var line5 = new THREE.Line( geometry5, material5 );
-			line5.rotation.x = -Math.PI / 2;
-			scene.add( line5 );
-
-			
 			var material9 = new THREE.LineDashedMaterial({
 				color: 0x00ff00, linewidth: 2 
 			});
@@ -546,20 +529,6 @@ function camera2D() {
 			var line11 = new THREE.Line( geometry11, material11 );
 			line11.rotation.x = -Math.PI / 2;
 			scene.add( line11 );
-
-
-			var material6 = new THREE.LineDashedMaterial({
-				color: 0xffffff , linewidth : 2
-			});
-			var geometry6 = new THREE.Geometry();
-			geometry6.vertices.push(
-					new THREE.Vector3( -19.3, -9.7, 0 ),
-					new THREE.Vector3( 50, -9.7, 0 ),
-			);
-			var line6 = new THREE.Line( geometry6, material6 );
-			line6.rotation.x = -Math.PI / 2;
-			scene.add( line6 );
-
 
 	    
 			var material7 = new THREE.LineBasicMaterial({
@@ -636,6 +605,18 @@ function camera2D() {
 
 
 	} else {
+			var axis= new THREE.AxisHelper(50);
+		    axis.position.set(-25.5,-9.7,12.8);
+		    axis.rotation.y=Math.PI/2;
+		    scene.add(axis);
+
+		    var sg = new THREE.SphereGeometry( 0.1, 32, 32 );
+			var sm = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+			var s1 = new THREE.Mesh( sg, sm );
+			s1.rotation.y=Math.PI/6;
+			s1.rotation.x=Math.PI/2;
+			s1.position.set(-25.5,-9.7,12.8);
+			scene.add(s1);
 
 			var material4 = new THREE.MeshBasicMaterial( {side: THREE.DoubleSide , transparent: true, opacity: 0.5} );
 			var geometry4 = new THREE.PlaneGeometry( 1.5, 1.5, 32 );
@@ -730,11 +711,18 @@ function camera2D() {
 					new THREE.Vector3( -19.3, -9.7, 0 ),
 			);
 
-			var line5 = new THREE.Line( geometry5, material5 );
-			line5.rotation.x = -Math.PI / 2;
-			scene.add( line5 );
+			var material8 = new THREE.LineBasicMaterial({
+				color: 0xff0000 , linewidth : 2
+			});
+			var geometry8 = new THREE.Geometry();
+			geometry8.vertices.push(
+					new THREE.Vector3( -100, -3, 0 ),
+					new THREE.Vector3( 10, -3, 0 ),
+			);
+			var line8 = new THREE.Line( geometry8, material8 );
+			line8.rotation.x = -Math.PI / 2;
+			scene.add( line8 );	
 
-			
 			var material9 = new THREE.LineDashedMaterial({
 				color: 0x000000, linewidth: 2 
 			});
@@ -742,7 +730,7 @@ function camera2D() {
 			geometry9.vertices.push(
 					new THREE.Vector3( 1.3, 50, 0 ),
 					new THREE.Vector3( 1.3, 5.9, 0 ),
-			);
+			);		
 
 			var line9 = new THREE.Line( geometry9, material9 );
 			line9.rotation.x = -Math.PI / 2;
@@ -775,19 +763,6 @@ function camera2D() {
 			var line11 = new THREE.Line( geometry11, material11 );
 			line11.rotation.x = -Math.PI / 2;
 			scene.add( line11 );
-
-
-			var material6 = new THREE.LineDashedMaterial({
-				color: 0x000000 , linewidth : 2
-			});
-			var geometry6 = new THREE.Geometry();
-			geometry6.vertices.push(
-					new THREE.Vector3( -19.3, -9.7, 0 ),
-					new THREE.Vector3( 50, -9.7, 0 ),
-			);
-			var line6 = new THREE.Line( geometry6, material6 );
-			line6.rotation.x = -Math.PI / 2;
-			scene.add( line6 );
 
 
 	    
