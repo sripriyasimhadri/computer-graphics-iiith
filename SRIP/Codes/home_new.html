@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Projections and cameras</title>
+  <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
 </head>
 <script LANGUAGE="JavaScript">
 function closed() {  
@@ -33,71 +34,10 @@ function closed() {
 			}
 			}
 		</script>
-
-<style>
-		html,body{
-		margin:0px;
-		padding:0px;
-		height:100%;
-		width:100%;
-		overflow:hidden;
-		}
-		body {
-		text-align: right;
-		text-justify: inter-word;
-		}
-		/* Split the screen in half */
-		.split {
-		height: 100%;
-		width: 20%;
-		position: fixed;
-		z-index: 1;
-		top: 0;
-		overflow-x: hidden;
-		padding-top: 20px;
-		}
-		.right {
-		right: 0;
-		background-color: white;
-		}
-		.centered {
-		position: absolute;
-		top: 60%;
-		left: 39%;
-		transform: translate(-50%, -50%);
-		text-align: left;
-		}
-		.noncentered {
-		position: absolute;
-		top: 5%;
-		text-align: left;
-		}
-		.non
-		{
-		position: absolute;
-		top: 50%;
-		text-align: left;
-		color: blue;
-		border-style: double;
-		border-color: black;
-		}
-		.d_Button{
-		float: right;
-		margin-top: 5px;
-		margin-right: 45px;
-		margin-left: 20px;
-		width: 100px;
-		height: 45px;
-		position: relative;
-		top: 70%;
-		}
-	</style>
-
 <body onload="initialize()">
-<div class="split right">
-	<div class="noncentered">
+<div class="split4 right4">
+	<div class="noncentered4">
 	<h2><b>Projections and Cameras</b></h2></br> 
-	<input type="text" name="">
       <i>The Set-up: Bunny through a Camera</i> </br>
       This experiment is designed to teach the orthographic and perspective projections using cameras and a bunny.
       A Camera node is similar to an instance. It has a Coordinate system which is a local coordinate system coordinate system wrt the Global fixed coordinate system. The camera is always placed at the origin of this Coordinate system looking towards X-axis.</br>
@@ -105,12 +45,12 @@ function closed() {
       The type of camera (orthographic/perspective) can be changed in the camera properties.</br></br></br></br></br></br></br></br></br>
       
      </div>
-<div class="non">
+<div class="non4">
 	<p><b><i> a.Refersh the page (F5), if you observe any random orientation of content</br>
 	 b.Use the mouse to observe the 3D structure in different angles</i></b></p>
 	 </div>
-	<a href="index.html"><button id="world" class="d_Button"><b><i>Display</i></b></button></a>
-	<a href="manual.html"><button id="world" class="d_Button"><b><i>Manual</i></b></button></a>
+	<a href="html pages/index.html"><button id="world" class="d_Button4"><b><i>Display</i></b></button></a>
+	<a href="html pages/manual.html"><button id="world" class="d_Button4"><b><i>Manual</i></b></button></a>
 
 	</div>
 
