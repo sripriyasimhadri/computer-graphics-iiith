@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transformation:Rotation</title>
+    <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
+</head>
+<script>
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+<body onload="initialize()" style="background: #E6E6FA">
+    <script src="js/canvas.js"></script>
+    <canvas id="canvas" width="400" height="400">
+    </canvas>
+    <div class="forFirstInputs">
+    	<h2><b><i>Transformation:Rotation</i></b></h2>
+		Enter the X coordinate:<input type="number" id="width" class="dimensionInput" value="5"/>
+		</br></br>
+		Enter the Y coordinate:<input type="number" id="height" class="dimensionInput" value="5"/>
+		</br></br>
+		Enter the Z coordinate:<input type="number" id="Z" class="dimensionInput" value="3"/>
+		</br></br>
+		Enter the diagonal:<input type="number" id="diagonal" class="dimensionInput" value="1"/>
+		</br></br>
+		<center><input type="button" class="button" onclick="draw()" value="Enter" class="enterButton" /></center> 
+
+		<div class="dropdown">
+        <p><b><i>Select the transformation of 180 degrees around an axis</i></b></p>
+        <p><i>[Click the button for dropdown;click enter to reset]</i></p>
+        <center>
+        <button onclick="myFunction()" class="dropbtn">&nbsp;&nbsp;&nbsp;&nbsp;Transformation&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        <div id="myDropdown" class="dropdown-content">
+        	<input type="button" value="X-Axis" class="button_d" onclick="transformX()" /></br>
+        	<input type="button" value="Y-Axis" class="button_d" onclick="transformY()"/></br>
+        	<input type="button" value="Z-Axis" class="button_d" onclick="transformZ()"/></br>  
+        </div>
+        </center>
+    </div>
+    </br></br></br></br></br></br></br></br></br></br>
+    <a href="home.html" class="button">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="display.html" class="button">Display</a>	
+	</div>
+</body>
+</html>

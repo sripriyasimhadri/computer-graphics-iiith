@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transformation:Rotation</title>
+    <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
+</head>
+<body onload="initialize()" style="background: #E6E6FA">
+    <script src="js/canvas.js"></script>
+    <canvas id="canvas" width="400" height="400">
+    </canvas>
+    <div class="forFirstInputs">
+    	<h2><b><i>Transformation:Rotation</i></b></h2>
+		<input type="checkbox" id="3d" onclick="threeDim()"/>3D </br></br>
+		<input type="checkbox" id="anim" onclick="anim()" checked="checked" />show animation </br></br>
+		<input type="checkbox" id="grid" onclick="drawBoard()"/>Draw XY grid </br></br>
+		<input type="checkbox" id="grid" onclick="drawBoard()"/>Draw YZ grid </br></br>
+		<input type="checkbox" id="grid" onclick="drawBoard()"/>Draw XZ grid </br></br> 
+
+		Enter the X coordinate:<input type="number" id="width" class="dimensionInput" value="5"/>
+		</br></br>
+		Enter the Y coordinate:<input type="number" id="height" class="dimensionInput" value="5"/>
+		</br></br>
+		Enter the Z coordinate:<input type="number" id="Z" class="dimensionInput" value="3"/>
+		</br></br>
+		Enter the diagonal:<input type="number" id="diagonal" class="dimensionInput" value="1"/>
+		</br></br>
+		<a href="home.html" class="button">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="world.html" class="button">World</a>
+	</div>
+</body>
+</html>
