@@ -43,8 +43,10 @@ function draw()
 
         function drawCartesianPoint(ctx, x, y) 
         {
+        	origin_x  = document.getElementById('origin_x').value;
+        	origin_y = document.getElementById('origin_y').value;
         	ctx.fillStyle = "#D3D3D3";
-            ctx.fillRect(x, -(y), -x, y); 
+            ctx.fillRect(x+origin_x*10, -(y)-origin_y*10, -x, y); 
         } 
         function drawCartesianText(ctx, x, y, text) 
         {
@@ -67,9 +69,10 @@ function draw()
 		    ctx.moveTo(0,-size*10);
 		    ctx.lineTo(0, size*10);
 		    ctx.stroke();       
-		    
+		    origin_x  = document.getElementById('origin_x').value;
+        	origin_y = document.getElementById('origin_y').value;
 		    ctx.font = "12px Arial";
-		    ctx.fillText("(0,0)",-20,20);
+		    ctx.fillText("(0,0)",-20+origin_x*10,20+origin_y*10);
 		    ctx.fillText("+ x",size*10-20, -10);
 		    ctx.fillText("- y",10, size*10-20);
 		    
@@ -82,6 +85,8 @@ function draw()
         width  = Number(document.getElementById('width').value);
         height = Number(document.getElementById('height').value);
         diagonal = Number(document.getElementById('diagonal').value);
+        origin_x  = Number(document.getElementById('origin_x').value);
+        origin_y = Number(document.getElementById('origin_y').value);
         var a=width.toString();
         var b=height.toString();
         var d=",";
@@ -89,7 +94,7 @@ function draw()
         var str="(";
         var txt=str.concat(a,d,b,e); 
         drawCartesianPoint(ctx, width*10/diagonal, height*10/diagonal);
-        drawCartesianText(ctx, width*10/diagonal, height*10/diagonal, txt);
+        drawCartesianText(ctx, width*10/diagonal+origin_x*10, height*10/diagonal+origin_y*10, txt);
 }
 function drawBoard()
 {
