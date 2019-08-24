@@ -69,3 +69,48 @@
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
+
+.split4 {
+height: 100%;
+width: 20%;
+position: fixed;
+z-index: 1;
+top: 0;
+overflow-x: hidden;
+padding-top: 20px;
+}
+.right4 {
+right: 0;
+background-color: white;
+}
+.centered4 {
+position: absolute;
+top: 60%;
+left: 39%;
+transform: translate(-50%, -50%);
+text-align: left;
+}
+.noncentered4 {
+position: absolute;
+top: 5%;
+text-align: left;
+}
+.non4
+{
+position: absolute;
+top: 50%;
+text-align: left;
+color: blue;
+border-style: double;
+border-color: black;
+}
+.d_Button4{
+float: right;
+margin-top: 5px;
+margin-right: 45px;
+margin-left: 20px;
+width: 100px;
+height: 45px;
+position: relative;
+top: 70%;
+}

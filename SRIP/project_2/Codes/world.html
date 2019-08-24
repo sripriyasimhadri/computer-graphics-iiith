@@ -23,7 +23,7 @@ window.onclick = function(event) {
 </script>
 <body onload="initialize()" style="background: #E6E6FA">
     <script src="js/canvas.js"></script>
-    <canvas id="canvas" width="400" height="400">
+    <canvas id="canvas" width="800" height="800">
     </canvas>
     <div class="forFirstInputs">
     	<h2><b><i>Transformation:Rotation</i></b></h2>
@@ -35,6 +35,8 @@ window.onclick = function(event) {
 		</br></br>
 		Enter the diagonal:<input type="number" id="diagonal" class="dimensionInput" value="1"/>
 		</br></br>
+        Enter the axis size:{max value:20}<input type="number" id="size" class="dimensionInput" value="20"/>
+        </br></br>
 		<center><input type="button" class="button" onclick="draw()" value="Enter" class="enterButton" /></center> 
 
 		<div class="dropdown">

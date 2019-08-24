@@ -22,7 +22,7 @@ var initialize  = function () {
         
         ctx.fillText("- x",-200, -10);
         ctx.fillText("+ y",10, -180); 
-         function drawCartesianPoint(ctx, x, y) 
+        function drawCartesianPoint(ctx, x, y) 
         {
         	ctx.fillStyle = "#D3D3D3";
             ctx.fillRect(x, -(y), -x, y); 
@@ -59,21 +59,22 @@ function draw()
 		function initialize()
 		{
 		    
+		    size  = Number(document.getElementById('size').value);
 		    ctx.beginPath();
-		    ctx.moveTo(-200,0);
-		    ctx.lineTo(200,0);
+		    ctx.moveTo(-size*10,0);
+		    ctx.lineTo(size*10,0);
 		    ctx.stroke();
-		    ctx.moveTo(0,-200);
-		    ctx.lineTo(0, 200);
-		    ctx.stroke();     
+		    ctx.moveTo(0,-size*10);
+		    ctx.lineTo(0, size*10);
+		    ctx.stroke();       
 		    
 		    ctx.font = "12px Arial";
 		    ctx.fillText("(0,0)",-20,20);
-		    ctx.fillText("+ x",180, -10);
-		    ctx.fillText("- y",10, 180);
+		    ctx.fillText("+ x",size*10-20, -10);
+		    ctx.fillText("- y",10, size*10-20);
 		    
-		    ctx.fillText("- x",-200, -10);
-		    ctx.fillText("+ y",10, -180);  
+		    ctx.fillText("- x",-size*10, -10);
+		    ctx.fillText("+ y",10, -size*10+20);  
         
     	};		
     	clear(ctx);
@@ -635,7 +636,8 @@ function transformZ()
 	    ctx.stroke();
 	    ctx.moveTo(0,-200);
 	    ctx.lineTo(0, 200);
-	    ctx.stroke();       
+	    ctx.stroke();     
+
 	    ctx.font = "12px Arial";
 	    ctx.fillText("(0,0)",20,-10);
 	    ctx.fillText("+ x",180, -10);
@@ -657,4 +659,185 @@ function transformZ()
     var txt=str.concat(m,a,d,m,b,e); 
     drawCartesianPoint(ctx, -width*10/diagonal, -height*10/diagonal);
     drawCartesianText(ctx, -width*10/diagonal, -height*10/diagonal, txt);	
+}
+
+function showUnits() 
+{
+	var cond = document.getElementById('units').checked;
+	if(cond==true)
+    {
+    	function drawCartesianPoint(ctx, x, y) 
+        {
+        	ctx.fillStyle = "#D3D3D3";
+            ctx.fillRect(x, -(y), -x, y); 
+        } 
+        function drawCartesianText(ctx, x, y, text) 
+        {
+            ctx.fillStyle = "#000000";
+            ctx.fillText(text, x, -(y));
+        }
+        function clear(ctx) 
+        {
+			ctx.clearRect(-200, -200, c.width, c.height);
+		}
+		function initialize()
+		{
+		    
+		    ctx.beginPath();
+		    ctx.moveTo(-200,0);
+		    ctx.lineTo(200,0);
+		    ctx.stroke();
+		    ctx.moveTo(0,-200);
+		    ctx.lineTo(0, 200);
+		    ctx.stroke();     
+		    ctx.fillStyle = "#000000";
+		    ctx.font = "12px Arial";
+		    ctx.fillText("(0,0)",-20,20);
+		    ctx.fillText("+ x",180, -10);
+		    ctx.fillText("- y",10, 180);
+		    
+		    ctx.fillText("- x",-200, -10);
+		    ctx.fillText("+ y",10, -180);  
+        
+    	};		
+    	clear(ctx);
+    	initialize();   
+        width  = Number(document.getElementById('width').value);
+        height = Number(document.getElementById('height').value);
+        diagonal = Number(document.getElementById('diagonal').value);
+        var a=width.toString();
+        var b=height.toString();
+        var d=",";
+        var e=")";
+        var str="(";
+        var txt=str.concat(a,d,b,e); 
+        drawCartesianPoint(ctx, width*10/diagonal, height*10/diagonal);
+        drawCartesianText(ctx, width*10/diagonal, height*10/diagonal, txt);
+
+	}
+	else{
+
+		function drawCartesianPoint(ctx, x, y) 
+        {
+        	ctx.fillStyle = "#D3D3D3";
+            ctx.fillRect(x, -(y), -x, y); 
+        } 
+
+	    function clear(ctx) 
+	    {
+			ctx.clearRect(-200, -200, c.width, c.height);
+		}
+		function initialize()
+		{
+		    ctx.beginPath();
+		    ctx.moveTo(-200,0);
+		    ctx.lineTo(200,0);
+		    ctx.stroke();
+		    ctx.moveTo(0,-200);
+		    ctx.lineTo(0, 200);
+		    ctx.stroke();         
+		};		
+		clear(ctx);
+		initialize();   
+	    width  = Number(document.getElementById('width').value);
+	    height = Number(document.getElementById('height').value);
+	    diagonal = Number(document.getElementById('diagonal').value); 
+	    drawCartesianPoint(ctx, width*10/diagonal, height*10/diagonal);		
+	}
+}
+
+function drawing() 
+{
+	var cond = document.getElementById('drawing').checked;
+	if(cond==true)
+    {
+    	function drawCartesianPoint(ctx, x, y) 
+        {
+        	ctx.fillStyle = "#D3D3D3";
+            ctx.fillRect(x, -(y), -x, y); 
+        } 
+        function drawCartesianText(ctx, x, y, text) 
+        {
+            ctx.fillStyle = "#000000";
+            ctx.fillText(text, x, -(y));
+        }
+        function clear(ctx) 
+        {
+			ctx.clearRect(-200, -200, c.width, c.height);
+		}
+		function initialize()
+		{
+		    
+		    ctx.beginPath();
+		    ctx.moveTo(-200,0);
+		    ctx.lineTo(200,0);
+		    ctx.stroke();
+		    ctx.moveTo(0,-200);
+		    ctx.lineTo(0, 200);
+		    ctx.stroke();     
+		    ctx.fillStyle = "#000000";
+		    ctx.font = "12px Arial";
+		    ctx.fillText("(0,0)",-20,20);
+		    ctx.fillText("+ x",180, -10);
+		    ctx.fillText("- y",10, 180);
+		    
+		    ctx.fillText("- x",-200, -10);
+		    ctx.fillText("+ y",10, -180);  
+        
+    	};		
+    	clear(ctx);
+    	initialize();   
+        width  = Number(document.getElementById('width').value);
+        height = Number(document.getElementById('height').value);
+        diagonal = Number(document.getElementById('diagonal').value);
+        var a=width.toString();
+        var b=height.toString();
+        var d=",";
+        var e=")";
+        var str="(";
+        var txt=str.concat(a,d,b,e); 
+        drawCartesianPoint(ctx, width*10/diagonal, height*10/diagonal);
+        drawCartesianText(ctx, width*10/diagonal, height*10/diagonal, txt);
+
+	}
+	else{
+
+		function drawCartesianPoint(ctx, x, y) 
+        {
+        	ctx.fillStyle = "#D3D3D3";
+            ctx.fillRect(x, -(y), -x, y); 
+        } 
+        function drawCartesianText(ctx, x, y, text) 
+        {
+            ctx.fillStyle = "#000000";
+            ctx.fillText(text, x, -(y));
+        }
+        function clear(ctx) 
+        {
+			ctx.clearRect(-200, -200, c.width, c.height);
+		}
+		function initialize()
+		{
+		    
+		    ctx.beginPath();
+
+		    ctx.font = "12px Arial";
+		    ctx.fillText("(0,0)",-20,20); 
+        
+    	};		
+    	clear(ctx);
+    	initialize();   
+        width  = Number(document.getElementById('width').value);
+        height = Number(document.getElementById('height').value);
+        diagonal = Number(document.getElementById('diagonal').value);
+        var a=width.toString();
+        var b=height.toString();
+        var d=",";
+        var e=")";
+        var str="(";
+        var txt=str.concat(a,d,b,e); 
+        drawCartesianPoint(ctx, width*10/diagonal, height*10/diagonal);
+        drawCartesianText(ctx, width*10/diagonal, height*10/diagonal, txt);
+
+	}
 }
